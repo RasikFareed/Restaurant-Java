@@ -1,4 +1,5 @@
 package com.restaurant;
+
 import lombok.*;
 import java.time.LocalTime;
 
@@ -9,5 +10,5 @@ public class FoodType {
 	private LocalTime fromTime;
 	private LocalTime toTime;
 	private int quantity;
-	
+
 }

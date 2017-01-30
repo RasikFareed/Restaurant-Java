@@ -1,20 +1,24 @@
 package com.restaurant.validator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.restaurant.Menu;
 import com.restaurant.exception.ItemNotFoundException;
 
 public class ItemValidator {
 
-	
-public void listByItem(Menu menu) {
+	private final Logger logger = Logger.getLogger(ItemValidator.class.getName());
 
-		if ("".equals(menu.getMenuList())|| " ".equals(menu.getMenuList())) {
+	public void listByItem(Menu menu) {
+
+		if ("".equals(menu.getMenuList()) || " ".equals(menu.getMenuList())) {
 			try {
-				
+
 				throw new ItemNotFoundException("Item not in menu list");
-			} 
-			catch (ItemNotFoundException e) {
-				System.out.println("Item not in menu list");
+			} catch (ItemNotFoundException e) {
+
+				logger.log(Level.SEVERE, "Exceptions Occured", e);
 			}
 
 		}

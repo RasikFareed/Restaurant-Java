@@ -1,5 +1,7 @@
 package com.restaurant;
+
 import lombok.*;
+
 @Data
 public class FoodStock {
 	private int foodStockId;

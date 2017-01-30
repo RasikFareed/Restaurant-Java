@@ -8,7 +8,7 @@ import com.restaurant.DAO.*;
 public class TestFoodTypeDAO {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		FoodTypeDAO foodTypeDAO = new FoodTypeDAO();
 		 List<FoodType> list = foodTypeDAO.list();
 		for (FoodType s : list) {

@@ -15,19 +15,15 @@ import com.restaurant.util.ConnectionUtil;
 public class ProcedureAddFoodDAO {
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String addFood(String menuItem,String foodType,String message) {
-        SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("add_food")
-                .declareParameters(new SqlParameter("Item", Types.VARCHAR),
-                		new SqlParameter("foodtype", Types.VARCHAR),
-                        new SqlOutParameter("add_message", Types.VARCHAR)
-                        );
-        call.setAccessCallParameterMetaData(false);
-        SqlParameterSource in = new MapSqlParameterSource().addValue("Item", menuItem)
-        													.addValue("foodtype", foodType);
-        Map<String, Object> execute = call.execute(in);
-        String status = (String) execute.get("add_message");
-        return status;
- 
-    }
+	public String addFood(String menuItem, String foodType, String message) {
+		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("add_food").declareParameters(
+				new SqlParameter("Item", Types.VARCHAR), new SqlParameter("foodtype", Types.VARCHAR),
+				new SqlOutParameter("add_message", Types.VARCHAR));
+		call.setAccessCallParameterMetaData(false);
+		SqlParameterSource in = new MapSqlParameterSource().addValue("Item", menuItem).addValue("foodtype", foodType);
+		Map<String, Object> execute = call.execute(in);
+		return (String) execute.get("add_message");
+
+	}
 
 }

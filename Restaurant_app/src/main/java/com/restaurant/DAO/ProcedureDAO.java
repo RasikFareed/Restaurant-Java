@@ -1,4 +1,5 @@
 package com.restaurant.DAO;
+
 import java.sql.Types;
 import java.time.LocalTime;
 import java.util.Map;
@@ -16,21 +17,16 @@ public class ProcedureDAO {
 
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String placeOrder(String seatno,String items,String quantity,LocalTime orderTime,String message) {
-        SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("place_order")
-                .declareParameters(new SqlParameter("seatno", Types.VARCHAR),
-                		new SqlParameter("_list1", Types.LONGNVARCHAR),
-                        new SqlParameter("_list2", Types.LONGNVARCHAR),
-                        new SqlParameter("order_time", Types.TIME),
-                        new SqlOutParameter("message", Types.VARCHAR));
-        call.setAccessCallParameterMetaData(false);
-        SqlParameterSource in = new MapSqlParameterSource().addValue("seatno", seatno)
-        													.addValue("_list1", items)
-        													.addValue("_list2",quantity)
-        													.addValue("order_time",orderTime );
-        Map<String, Object> execute = call.execute(in);
-        String status = (String) execute.get("message");
-        return status;
- 
-    }
+	public String placeOrder(String seatno, String items, String quantity, LocalTime orderTime, String message) {
+		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("place_order").declareParameters(
+				new SqlParameter("seatno", Types.VARCHAR), new SqlParameter("_list1", Types.LONGNVARCHAR),
+				new SqlParameter("_list2", Types.LONGNVARCHAR), new SqlParameter("order_time", Types.TIME),
+				new SqlOutParameter("message", Types.VARCHAR));
+		call.setAccessCallParameterMetaData(false);
+		SqlParameterSource in = new MapSqlParameterSource().addValue("seatno", seatno).addValue("_list1", items)
+				.addValue("_list2", quantity).addValue("order_time", orderTime);
+		Map<String, Object> execute = call.execute(in);
+		return (String) execute.get("message");
+
+	}
 }
