@@ -7,8 +7,7 @@ import com.restaurant.Menu;
 import com.restaurant.exception.ItemNotFoundException;
 
 public class ItemValidator {
-
-	private final Logger logger = Logger.getLogger(ItemValidator.class.getName());
+	private static final Logger logger = Logger.getLogger(ItemValidator.class.getName());
 
 	public void listByItem(Menu menu) {
 

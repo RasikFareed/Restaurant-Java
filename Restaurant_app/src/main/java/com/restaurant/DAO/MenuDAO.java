@@ -15,8 +15,8 @@ public class MenuDAO {
 	public void save(Menu menu) {
 		String sql = "insert into menu(id,food_list) values(?,?)";
 		Object[] params = { menu.getMenuId(), menu.getMenuList() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows inserted: " + rows);
+		jdbcTemplate.update(sql, params);
+		
 	}
 
 	public List<Menu> list() {
