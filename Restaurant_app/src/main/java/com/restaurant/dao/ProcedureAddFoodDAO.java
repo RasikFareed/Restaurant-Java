@@ -1,4 +1,4 @@
-package com.restaurant.DAO;
+package com.restaurant.dao;
 
 import java.sql.Types;
 import java.util.Map;
@@ -15,7 +15,7 @@ import com.restaurant.util.ConnectionUtil;
 public class ProcedureAddFoodDAO {
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String addFood(String menuItem, String foodType, String message) {
+	public String addFood(String menuItem, String foodType) {
 		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("add_food").declareParameters(
 				new SqlParameter("Item", Types.VARCHAR), new SqlParameter("foodtype", Types.VARCHAR),
 				new SqlOutParameter("add_message", Types.VARCHAR));

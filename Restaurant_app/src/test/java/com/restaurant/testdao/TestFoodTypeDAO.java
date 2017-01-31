@@ -1,9 +1,9 @@
-package com.restaurant.testDAO;
+package com.restaurant.testdao;
 
 import java.util.List;
 
-import com.restaurant.*;
-import com.restaurant.DAO.*;
+import com.restaurant.dao.*;
+import com.restaurant.model.*;
 
 public class TestFoodTypeDAO {
 

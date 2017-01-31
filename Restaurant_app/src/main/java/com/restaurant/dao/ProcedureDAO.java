@@ -1,4 +1,4 @@
-package com.restaurant.DAO;
+package com.restaurant.dao;
 
 import java.sql.Types;
 import java.time.LocalTime;
@@ -17,7 +17,7 @@ public class ProcedureDAO {
 
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String placeOrder(String seatno, String items, String quantity, LocalTime orderTime, String message) {
+	public String placeOrder(String seatno, String items, String quantity, LocalTime orderTime) {
 		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("place_order").declareParameters(
 				new SqlParameter("seatno", Types.VARCHAR), new SqlParameter("_list1", Types.LONGNVARCHAR),
 				new SqlParameter("_list2", Types.LONGNVARCHAR), new SqlParameter("order_time", Types.TIME),

@@ -1,4 +1,4 @@
-package com.restaurant.DAO;
+package com.restaurant.dao;
 
 import java.sql.Types;
 import java.util.Map;
@@ -16,7 +16,7 @@ public class ProcedureCancelDAO {
 
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String cancelOrder(int orderId, String seatno, String item, String cancelMessage) {
+	public String cancelOrder(int orderId, String seatno, String item) {
 		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("cancel_order").declareParameters(
 				new SqlParameter("order_id", Types.INTEGER), new SqlParameter("seatno", Types.VARCHAR),
 				new SqlParameter("item", Types.VARCHAR), new SqlOutParameter("cancel_message", Types.VARCHAR));

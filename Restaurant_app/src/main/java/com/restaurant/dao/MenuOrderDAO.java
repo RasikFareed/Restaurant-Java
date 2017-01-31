@@ -1,8 +1,9 @@
-package com.restaurant.DAO;
+package com.restaurant.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.restaurant.model.*;
 import com.restaurant.util.*;
-import com.restaurant.*;
 
 public class MenuOrderDAO {
 
@@ -17,11 +18,11 @@ public class MenuOrderDAO {
 			menuOrder.setMenuOrderId(rs.getInt("id"));
 
 			Menu menus = new Menu();
-			menus.setMenuId(rs.getInt("id"));
+			menus.setMenuId(rs.getInt("menu_list"));
 			menuOrder.setMenuListId(menus);
 
 			FoodType foodTypes = new FoodType();
-			foodTypes.setFoodTypeId(rs.getInt("id"));
+			foodTypes.setFoodTypeId(rs.getInt("food_type"));
 			menuOrder.setFoodTypeId(foodTypes);
 
 			menuOrder.setStockQuantity(rs.getInt("quantity"));

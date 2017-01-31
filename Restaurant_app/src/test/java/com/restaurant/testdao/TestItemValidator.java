@@ -1,6 +1,6 @@
-package com.restaurant.testDAO;
+package com.restaurant.testdao;
 
-import com.restaurant.Menu;
+import com.restaurant.model.Menu;
 import com.restaurant.validator.ItemValidator;
 
 public class TestItemValidator {

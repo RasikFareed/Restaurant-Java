@@ -1,9 +1,10 @@
-package com.restaurant.DAO;
+package com.restaurant.dao;
 
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import com.restaurant.ViewOrderDetails;
+
+import com.restaurant.model.ViewOrderDetails;
 import com.restaurant.util.ConnectionUtil;
 
 public class ViewOrderDetailsDAO {

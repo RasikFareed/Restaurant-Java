@@ -3,8 +3,8 @@ package com.restaurant.validator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.restaurant.Menu;
 import com.restaurant.exception.ItemNotFoundException;
+import com.restaurant.model.Menu;
 
 public class ItemValidator {
 	private static final Logger logger = Logger.getLogger(ItemValidator.class.getName());

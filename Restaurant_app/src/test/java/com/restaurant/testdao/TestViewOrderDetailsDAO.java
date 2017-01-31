@@ -1,10 +1,10 @@
-package com.restaurant.testDAO;
+package com.restaurant.testdao;
 
 import java.util.Iterator;
 import java.util.List;
 
-import com.restaurant.ViewOrderDetails;
-import com.restaurant.DAO.ViewOrderDetailsDAO;
+import com.restaurant.dao.ViewOrderDetailsDAO;
+import com.restaurant.model.ViewOrderDetails;
 
 public class TestViewOrderDetailsDAO {
 
